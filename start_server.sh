@@ -1,2 +1,2 @@
-java -Xmx4096M -Xms4096M -jar /home/dyap/minecraft_1.16/server.jar nogui
+java -Xmx4096M -Xms4096M -jar $HOME/minecraft_1.16/server.jar nogui
 
