@@ -15,4 +15,12 @@ fi
 # Command for java-14
 java -server -XX:ParallelGCThreads=2 -Xmx4G -jar spigot-1.16.1.jar nogui
 
+if [ ! -z "$STY" ]
+        then
+	echo "Exiting screen..."
+	screen -X quit
+fi
+
+echo "GG!"
+
 
