@@ -13,14 +13,23 @@ fi
 #java -server -XX:+UseConcMarkSweepGC -XX:ParallelGCThreads=2 -XX:+AggressiveOpts -Xmx4G -jar spigot-1.16.1.jar nogui 
 
 # Command for java-14
-java -server -XX:ParallelGCThreads=2 -Xmx4G -jar spigot-1.16.1.jar nogui
+if [ -z $1  ]
+        then
+	echo "Starting server without gui..."
+	java -server -XX:ParallelGCThreads=2 -Xmx4G -jar spigot-1.16.1.jar nogui
+	elif [[ "$1" -eq "gui" ]]
+	then
+	echo "Starting server with gui..."
+	java -server -XX:ParallelGCThreads=2 -Xmx4G -jar spigot-1.16.1.jar
+fi
 
 if [ ! -z "$STY" ]
         then
-	echo "Exiting screen..."
+	echo "GG!"
+	read -r -s -p $'Press enter to exit screen session...'
 	screen -X quit
+
 fi
 
-echo "GG!"
 
 
