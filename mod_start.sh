@@ -9,23 +9,30 @@ if [ -z "$STY" ]
         exit;
 fi
 
+
 # Command
 #java -server -XX:+UseConcMarkSweepGC -XX:ParallelGCThreads=2 -XX:+AggressiveOpts -Xmx4G -jar spigot-1.16.1.jar nogui 
+echo "Welcome to Yaps Minecraft server.."
+echo "When you stop the server wait for GG! to appear before you exit the screen..."
 
 # Command for java-14
 if [ -z $1  ]
         then
-	echo "Starting server without gui..."
-	java -server -XX:ParallelGCThreads=2 -Xmx4G -jar spigot-1.16.1.jar nogui
+	read -r -s -p $'Press enter to start server without gui'
+	java -server -XX:ParallelGCThreads=2 -Xms4G -Xmx6G -jar spigot-1.16.1.jar nogui
 	elif [[ "$1" -eq "gui" ]]
 	then
-	echo "Starting server with gui..."
-	java -server -XX:ParallelGCThreads=2 -Xmx4G -jar spigot-1.16.1.jar
+	read -r -s -p $'Press enter to start server with gui (needs Xlaunch)'
+	java -server -XX:ParallelGCThreads=2 -Xms4G -Xmx6G -jar spigot-1.16.1.jar
+	else
+	echo "Invalid command."
+	exit;
 fi
 
 if [ ! -z "$STY" ]
         then
 	echo "GG!"
+	echo "If you are no longer using the server, shut it down with _sudo shutdown_"
 	read -r -s -p $'Press enter to exit screen session...'
 	screen -X quit
 
