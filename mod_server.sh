@@ -11,4 +11,4 @@
 # fabric 1.16.4
 curl https://maven.fabricmc.net/net/fabricmc/fabric-installer/0.6.1.51/fabric-installer-0.6.1.51.jar -o fabric-installer-0.6.1.51.jar
 
-java -jar fabric-installer-0.6.1.51.jar server -downloadMinecraft
+java -jar fabric-installer-0.6.1.51.jar server -downloadMinecraft -mcversion 1.16.4
