@@ -22,11 +22,11 @@ echo "When you stop the server wait for GG! to appear before you exit the screen
 if [ -z $1  ]
         then
 	read -r -s -p $'Press enter to start server without gui'
-	java -server -XX:ParallelGCThreads=6 -Xms16G -Xmx28G -jar $mod nogui
+	java -server -XX:ParallelGCThreads=6 -Xms4G -Xmx10G -jar $mod nogui
 	elif [[ "$1" -eq "gui" ]]
 	then
 	read -r -s -p $'Press enter to start server with gui (needs Xlaunch)'
-	java -server -XX:ParallelGCThreads=6 -Xms16G -Xmx28G -jar $mod
+	java -server -XX:ParallelGCThreads=6 -Xms4G -Xmx10G -jar $mod
 	else
 	echo "Invalid command."
 	exit;
